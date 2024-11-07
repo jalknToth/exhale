@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>motivakcion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #contenedor {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carrusel {
+            width: 100%;
+            display: flex;
+            font-size: 18px;
+            margin: 0 auto;
+            transition: transform 0.5s ease-in-out; /* transición suave */
+        }
+
+        .quote {
+            min-width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px; /* Espacio alrededor del texto */
+        }
+
+        /* Texto */
+        .quote p {
+        text-align: center; /* Centrar texto */
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        .logo {
+            max-width: 50px;
+            margin: 0 40px auto;
+            position: relative;
+            top: 20px;
+        }
+
+        /* Estilos responsive */
+        @media (max-width: 600px) {
+        .quote {
+            padding: 10px; /* Reduce el padding en pantallas pequeñas */
+        }
+
+        .logo {
+            max-width: 40px; /* Reducir el logo en pantallas pequeñas */
+        }
+
+        .carrusel {
+            font-size: 16px; /* Reducir texto en pantallas pequeñas */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="contenedor">
+        <div class="carrusel" id="carrusel">
+            <div class="quote">El silencio habla por sí solo.</div>
+            <div class="quote">No hay límites.</div>
+            <div class="quote">No hay excusas.</div>
+            <div class="quote">Todo es posible.</div>
+            <div class="quote">Todo estará mejor.</div>
+            <div class="quote">Todo es cuestión de mentalidad.</div>
+            <div class="quote">Hoy es más importante que ayer.</div>
+            <div class="quote">Ganar la mañana es ganar el día.</div>
+            <div class="quote">Cada día es una nueva oportunidad.</div>
+            <div class="quote">Hoy es un nuevo día y un nuevo comienzo.</div>
+            <div class="quote">Siempre hay una solución.</div>
+            <div class="quote">La luz siempre vence a la oscuridad.</div>
+            <div class="quote">Tener paz es más importante que tener razón.</div>
+            <div class="quote">Nada crece en zona de confort.</div>
+            <div class="quote">Crecer siempre es dificil, tienes la fuerza para hacerlo</div>
+            <div class="quote">Las circunstancias son regalos para ayudarte a mejorar</div>
+            <div class="quote">Los obstáculos son oportunidades disfrazadas.</div>
+            <div class="quote">Cada reto es una oportunidad para crecer</div>
+            <div class="quote">La consistencia por encima de la intensidad.</div>
+            <div class="quote">Hablar con palabras positivas atrae cosas positivas</div>
+            <div class="quote">El progreso por encima de la perfección.</div>
+            <div class="quote">Lo fundamental por encima de las modas.</div>
+            <div class="quote">Aprender y crecer no es fácil pero vale la pena.</div>
+            <div class="quote">Vivir el presente.</div>
+            <div class="quote">Es tu momento.</div>
+            <div class="quote">Enfócate en lo que puedes e ignora lo que no puedas controlar</div>
+            <div class="quote">Puedes hacer lo que quieras.</div>
+            <div class="quote">Lo que se manifiesta se atrae.</div>
+            <div class="quote">Evitar dramas para mantener la paz.</div>
+            <div class="quote">Pensar positivo crea emociones positivas.</div>
+            <div class="quote">Sentirse estancado es sólo un sentir pero no un hecho</div>
+            <div class="quote">Ten lo suficiente, haz lo suficiente, sé lo suficiente</div>
+            <div class="quote">Los dias dificiles han terminado.</div>
+            <div class="quote">Confia en ti y en tus habilidades.</div>
+            <div class="quote">La felicidad comienza en uno.</div>
+            <div class="quote">Nunca es tarde para dejar ir.</div>
+            <div class="quote">Una nueva vida requiere soltar viejos caminos.</div>
+            
+        </div>
+    </div>
+    <div>
+        <img src="motivakcion.png" alt="logo" class="logo"> 
+    </div>
+
+    <script>
+        const carrusel = document.getElementById('carrusel');
+        let indiceActual = 0;
+
+        // Función para mover el carrusel
+        function moverCarrusel() {
+            // Calcula la posición del carrusel
+            const translateX = -indiceActual * 100 + '%';
+            carrusel.style.transform = `translateX(${translateX})`;
+        }
+
+        // Agregar un evento de clic al contenedor para cambiar de frase
+        document.getElementById('contenedor').addEventListener('click', function() {
+            indiceActual = (indiceActual + 1) % carrusel.children.length;
+            moverCarrusel();
+        });
+
+        // Iniciar el carrusel en la primera frase
+        moverCarrusel();
+    </script>
+</body>
+</html>
